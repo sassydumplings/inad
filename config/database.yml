@@ -15,6 +15,7 @@
 development:
   adapter: postgresql
   encoding: unicode
+  host: localhost
   database: inad_development
   pool: 5
   username: patsyprice
@@ -41,6 +42,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
+  host: localhost
   database: inad_test
   pool: 5
   username: patsy
@@ -49,6 +51,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
+  host: localhost
   database: inad_production
   pool: 5
   username: patsyprice
