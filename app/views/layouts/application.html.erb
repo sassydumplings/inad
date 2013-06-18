@@ -12,7 +12,7 @@
 
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=en"></script>
   	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
   	<%= stylesheet_link_tag    "application" %>
@@ -27,7 +27,6 @@
     <a href="#" class="button round">Soda and Other Drinks</a>
 
     <%= yield %>
-
 <!-- javascript halts all the processing on a page so put at bottom on page -->
     <%= javascript_include_tag "application" %>
   </body>
