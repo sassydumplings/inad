@@ -1,0 +1,3 @@
+https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=37.788022,-122.399797&radius=500&types=cafe&sensor=false&key=AIzaSyBPdqBp1stWvW-q4uOFX16JAuYEFVftv5w
+
+https://maps.googleapis.com/maps/api/place/textsearch/json?location=37.788022,-122.399797&radius=500&sensor=false&key=AIzaSyBPdqBp1stWvW-q4uOFX16JAuYEFVftv5w?query="coffee"

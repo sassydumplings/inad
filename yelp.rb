@@ -4,11 +4,10 @@ require 'httparty'
 require "pry"
 require "json"
 
-consumer_key = ''
-consumer_secret = ''
-token = ''
-token_secret = ''
-
+consumer_key = 'mZJKmCuodFzRNL9xe2WoBw'
+consumer_secret = 'zPk7cjM3zCkny1326X007gQnRKE'
+token = 'fbijCzcyCqJb84Kf2GIr_f1ziEwEz_4B'
+token_secret = 'ydJXJalXD676NiYXE150dn1aAjo'
 
 api_host = 'api.yelp.com'
 
@@ -16,26 +15,29 @@ consumer = OAuth::Consumer.new(consumer_key, consumer_secret, {:site => "http://
 access_token = OAuth::AccessToken.new(consumer, token, token_secret)
 
 def time_path
-   t = Time.now.hour
-   if 2 < t && t < 12
-    path = "/v2/search?term=coffee&ll=37.788022,-122.399797&sort=1"
-   elsif 12 < t && t < 15
-    path = "/v2/search?term=food&ll=37.788022,-122.399797&sort=1"
+   t = Time.now
+   if 2 < t.hour && t.hour < 12
+    puts "it's morning"
+    #path = "/v2/search?term=coffee&ll=37.788022,-122.399797&limit=10&sort=1"
+   elsif 12 < t.hour && t.hour < 15
+    puts "it's lunchtime"
+    #path = "/v2/search?term=food&ll=37.788022,-122.399797&limit=10&sort=1"
    else
-    path = "/v2/search?term=bars&ll=37.788022,-122.399797&sort=1"
+    puts "it's time to drink.. evening"
+    #path = "/v2/search?term=bars&ll=37.788022,-122.399797&limit=10&sort=1"
    end
- return path
+ #return path
 end
 
-# path = "/v2/search?term=bars&ll=37.788022,-122.399797&limit=10&sort=1"
+path = "/v2/search?term=bars&ll=37.788022,-122.399797&limit=10&sort=1"
 
-path = time_path()
+time_path()
 
 p = JSON(access_token.get(path).body)
 
 biz = []
 
-p["businesses"].each {|x| biz << x }
+p.each {|x| biz << x }
 
 binding.pry
 

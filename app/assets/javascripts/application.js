@@ -12,5 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+<<<<<<< HEAD
 //= require bootstrap
+=======
+//= require foundation
+>>>>>>> 39aa00d967627261a72697947c71daf70c462e98
 //= require_tree .
+
+$(function(){ $(document).foundation(); });
