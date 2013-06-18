@@ -6,3 +6,15 @@ Connecting to database specified by database.yml
   [1m[35m (4.1ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
   [1m[36m (0.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2013-06-18 14:57:42 -0700
+Served asset /rails.png - 200 OK (10ms)
+
+
+Started GET "/rails/info/properties" for 127.0.0.1 at 2013-06-18 14:57:47 -0700
+  [1m[36m (0.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Processing by Rails::InfoController#properties as */*
+  Rendered inline template (2.1ms)
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms)
