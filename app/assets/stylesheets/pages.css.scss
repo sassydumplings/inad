@@ -1,3 +1,19 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+text-align:left;
+font-size:80px;
+color:#661100;
+font-style:italic;
+width: 900px;
+margin:0 auto;
+}
+
+#scrolling {
+  width:100px;
+  height:100px;
+  overflow: auto;
+}
+

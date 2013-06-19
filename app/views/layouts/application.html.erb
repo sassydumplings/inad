@@ -13,7 +13,8 @@
   	<!-- Set the viewport width to device width for mobile -->
   	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&language=en"></script>
-  	<title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+  	<!-- <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title> -->
+    <title>I need a Drink</title>
 
   	<%= stylesheet_link_tag    "application" %>
   	<%= javascript_include_tag "vendor/custom.modernizr" %>
@@ -21,13 +22,9 @@
   </head>
 
   <body>
-    <h1>I need a Drink....</h1>
-    <a href="#" class="button round">Alcohol</a>
-    <a href="#" class="button round">Coffee</a>
-    <a href="#" class="button round">Soda and Other Drinks</a>
+    <h1>I need a Drink.....</h1>
 
     <%= yield %>
-<!-- javascript halts all the processing on a page so put at bottom on page -->
     <%= javascript_include_tag "application" %>
   </body>
 </html>

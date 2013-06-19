@@ -15,12 +15,8 @@
 /tmp
 <<<<<<< HEAD
 / .env
-=======
-<<<<<<< HEAD
-.env
 /config/database.yml
 =======
-/.env
->>>>>>> 0a4bff5f52fe6fcfcd5998c13d75c5ef618134df
-/config/database.yml
->>>>>>> 39aa00d967627261a72697947c71daf70c462e98
+config/database.yml
+
+>>>>>>> 85249ba9abd71f64747921a6fde95f42cfabb39d

@@ -1,17 +1,19 @@
 class PagesController < ApplicationController
   def index
 
-consumer_key = 'mZJKmCuodFzRNL9xe2WoBw'
-consumer_secret = 'zPk7cjM3zCkny1326X007gQnRKE'
-token = 'fbijCzcyCqJb84Kf2GIr_f1ziEwEz_4B'
-token_secret = 'ydJXJalXD676NiYXE150dn1aAjo'
+  consumer_key = 'mZJKmCuodFzRNL9xe2WoBw'
+  consumer_secret = 'zPk7cjM3zCkny1326X007gQnRKE'
+  token = 'fbijCzcyCqJb84Kf2GIr_f1ziEwEz_4B'
+  token_secret = 'ydJXJalXD676NiYXE150dn1aAjo'
 
-@test = [1, 4, 5]
+# @test = [1, 4, 5]
 
-# api_host = 'api.yelp.com'
 
-# consumer = OAuth::Consumer.new(consumer_key, consumer_secret, {:site => "http://#{api_host}"})
-# access_token = OAuth::AccessToken.new(consumer, token, token_secret)
+
+   api_host = 'api.yelp.com'
+
+   consumer = OAuth::Consumer.new(consumer_key, consumer_secret, {:site => "http://#{api_host}"})
+   access_token = OAuth::AccessToken.new(consumer, token, token_secret)
 
 # def time_path
 #    t = Time.now
@@ -28,15 +30,30 @@ token_secret = 'ydJXJalXD676NiYXE150dn1aAjo'
 #  #return path
 # end
 
-# path = "/v2/search?term=bars&ll=37.788022,-122.399797&limit=10&sort=1"
+  path = "/v2/search?term=bars&ll=37.788022,-122.399797&limit=10&sort=1"
 
 # time_path()
+# binding.pry
 
-# p = JSON(access_token.get(path).body)
+   p = JSON(access_token.get(path).body)
 
-# biz = []
+   biz = []
+   @names = []
+   @display_address = []
+   @distance = []
+   @snippet_text = []
 
-# p.each {|x| biz << x }
+
+  @results = p["businesses"].each {|x| biz << x }
+  @results.each  do |x|
+    @names << x["name"]
+    @display_address << x["location"]["display_address"]
+    @distance << x["distance"]
+    @snippet_text << x["snippet_text"]
+  end
+
+
+
 
 
 # "distance" from  lat long in meters
@@ -50,10 +67,6 @@ token_secret = 'ydJXJalXD676NiYXE150dn1aAjo'
 #       "Financial District",
 #       "San Francisco, CA 94105"],
 # "rating_img_url_small"  image of yelp ratings
-
-# sort biz array by distance.. then extract content from the first 10 results
-# array sort method ascending:
-# array.sort! { |first, second| first <=> second }
 
 
   end
