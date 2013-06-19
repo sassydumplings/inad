@@ -4,10 +4,10 @@ require 'httparty'
 require "pry"
 require "json"
 
-consumer_key = 'mZJKmCuodFzRNL9xe2WoBw'
-consumer_secret = 'zPk7cjM3zCkny1326X007gQnRKE'
-token = 'fbijCzcyCqJb84Kf2GIr_f1ziEwEz_4B'
-token_secret = 'ydJXJalXD676NiYXE150dn1aAjo'
+consumer_key = ENV["CONSUMER_KEY"]
+consumer_secret = ENV["CONSUMER_SECRET"]
+token = ENV["TOKEN"]
+token_secret = ENV["TOKEN_SECRET"]
 
 api_host = 'api.yelp.com'
 
