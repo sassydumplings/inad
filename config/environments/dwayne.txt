@@ -1,0 +1,66 @@
+
+
+.trucks {
+  height:200px;
+  overflow:scroll;
+}
+.trucks li {
+  color:red;
+}
+.trucks .address {
+  font-weight:bold;
+}
+
+
+<ul class="trucks">
+  <% @foodtrucks.each_with_index do |t,index| %>
+    <li class="truck<%= index %">
+      <div class="name"><%= truck.name %></div>
+      <div class="address"><%= truck.address %></div>
+    </li>
+  <% end>
+</ul>
+
+puts p["businesses"][0]["location"]["display_address"]
+puts p["businesses"][0]["display_phone"]
+puts p["businesses"][0]["display_phone"]
+puts p["businesses"][0]["snippet_text"]
+
+
+removed from application.html.erb
+<!--  <%= javascript_include_tag "application" %> -->
+
+p["businesses"].each do |x|
+     puts x["name"]
+     puts x["location"]["display_address"]
+     puts x["display_phone"]
+     puts x["snippet_text"]
+     puts " "
+end
+
+
+<p><%= @display.each do |x| %></p>
+<p id="bname"><%= puts x["name"] %></p>
+<p><%= puts x["location"]["display_address"] %></p>
+<p><%= puts x["display_phone"] %></p>
+<p><%= puts x["snippet_text"] %></p>
+<p><%= puts " " %></p>
+
+
+ binding.pry
+
+ biz = []
+ @names = []
+ @display_address = []
+ @distance = []
+ @snippet_text = []
+
+
+@search = p["businesses"].each {|x| biz << x }
+
+@search.each  do |x|
+  @names << x["name"]
+  @display_address << x["location"]["display_address"]
+  @distance << x["distance"]
+  @snippet_text << x["snippet_text"]
+end

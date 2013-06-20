@@ -7,6 +7,11 @@ gem 'bootstrap-sass'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem 'pry-rails'   # will create pry console in rails console
+gem 'pry-debugger'
+gem 'better_errors'
+gem 'binding_of_caller'
+gem 'meta_request'
 
 
 # Gems used only for assets and not required

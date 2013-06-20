@@ -2,34 +2,22 @@
 <div id="testarray"><%= @test %></div>
  -->
 
-<div class="row">
-  <div class="large-3 columns">
-    <div id="map-canvas" style="height:500px; width:500px;"></div>
-    <div id="testarray"><%= @test %></div>
-  </div>
+    <div class="map">
+      <div id="map-canvas" style="height:500px; width:500px;"></div>
+      <div id="testarray"><%= @test %></div>
+     </div>
 
+     <div class="backwards"></div>
 
-  <div class="large-3 columns">
-    <p><%= @names[0] %></p>
-    <p><%= @display_address[0] %></p>
-    <p><%= @distance[0] %></p>
-    <p><%= @snippet_text[0] %></p>
-  </div>
-</div>
+      <p><% i = 0 %></p>
+      <p><% while i < @display.length %></p>
+      <p id="bname"><%= @display[i]["name"] %></p>
+         <% @display[i]["location"]["display_address"].each do |x| %>
+      <div><%= x %></div>
+         <% end %>
+      <p><%= @display[i]["display_phone"] %></p>
+      <p><%= @display[i]["snippet_text"] %></p>
+      <p><% i +=1 %></p>
+      <p><% end %></p>
 
-<div id="scrolling">
-  <div class="large-3 columns">
-    <p><%= @names[0] %></p>
-    <p><%= @display_address[0] %></p>
-    <p><%= @distance[0] %></p>
-    <p><%= @snippet_text[0] %></p>
-   text text text text text text text text text
-   text text text text text text text text text
-   text text text text text text text text text
-   text text text text text text text text text
-   text text text text text text text text text
-   text text text text text text text text text
-   text text text text text text text text text
-   text text text text text text text text text
-   </div>
-</div>
+    </div>
