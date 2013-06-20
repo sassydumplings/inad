@@ -47,3 +47,4 @@ gem 'unicorn'
 gem 'oauth'
 gem 'json'
 gem "pry"
+gem 'geocoder'
