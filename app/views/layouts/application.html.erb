@@ -21,9 +21,10 @@
   </head>
 
   <body>
-
+    <nav></nav>
+    <%= javascript_include_tag "application" %>
     <%= yield %>
 <!-- javascript halts all the processing on a page so put at bottom on page -->
-    <%= javascript_include_tag "application" %>
+
   </body>
 </html>

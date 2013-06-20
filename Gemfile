@@ -42,3 +42,4 @@ gem 'zurb-foundation'
 gem 'oauth'
 gem 'json'
 gem "pry"
+gem 'geocoder'

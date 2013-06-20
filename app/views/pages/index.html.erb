@@ -1,2 +1,46 @@
 <div id="map-canvas" style="height:500px; width:500px;"></div>
-<div id="testarray"><%= @test %></div>
+
+<script>
+
+  var locations = <%= @results %>
+
+  function initialize() {
+
+    var mapOptions = {
+      zoom: 15,
+      panControl: false,
+      zoomControlOptions: {
+        style: google.maps.ZoomControlStyle.SMALL
+      },
+      center: new google.maps.LatLng(37.779931, -122.394868),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var map = new google.maps.Map(document.getElementById('map-canvas'),
+        mapOptions);
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][0], locations[i][1]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+
+  }
+
+  // google.maps.event.addDomListener(window, 'ready', initialize);
+  $(document).ready(function(){
+    initialize();
+  });
+</script>
