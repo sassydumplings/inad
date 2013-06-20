@@ -15,22 +15,19 @@ class PagesController < ApplicationController
    consumer = OAuth::Consumer.new(consumer_key, consumer_secret, {:site => "http://#{api_host}"})
    access_token = OAuth::AccessToken.new(consumer, token, token_secret)
 
-# def time_path
-#    t = Time.now
-#    if 2 < t.hour && t.hour < 12
-#     puts "it's morning"
-#     #path = "/v2/search?term=coffee&ll=37.788022,-122.399797&limit=10&sort=1"
-#    elsif 12 < t.hour && t.hour < 15
-#     puts "it's lunchtime"
-#     #path = "/v2/search?term=food&ll=37.788022,-122.399797&limit=10&sort=1"
-#    else
-#     puts "it's time to drink.. evening"
-#     #path = "/v2/search?term=bars&ll=37.788022,-122.399797&limit=10&sort=1"
-#    end
-#  #return path
-# end
+def time_path
+   t = Time.now.hour
+   if 2 < t && t < 12
+    path = "/v2/search?term=coffee&ll=37.788022,-122.399797&limit=10&sort=1"
+   elsif 12 < t && t < 15
+    path = "/v2/search?term=food&ll=37.788022,-122.399797&limit=10&sort=1"
+   else
+     path = "/v2/search?term=bars&ll=37.788022,-122.399797&limit=10&sort=1"
+   end
+  return path
+end
 
-  path = "/v2/search?term=bars&ll=37.788022,-122.399797&limit=10&sort=1"
+ # path = "/v2/search?term=bars&ll=37.788022,-122.399797&limit=10&sort=1"
 
 # time_path()
 # binding.pry
@@ -38,7 +35,7 @@ class PagesController < ApplicationController
    p = JSON(access_token.get(path).body)
 
    biz = []
-   @names = []
+   @names.v = []
    @display_address = []
    @distance = []
    @snippet_text = []
