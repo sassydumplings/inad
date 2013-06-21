@@ -1,17 +1,41 @@
 
-      <p><% i = 0 %></p>
-      <p><% while i < @display.length %></p>
-      <p id="bname"><%= @display[i]["name"] %></p>
-         <% @display[i]["location"]["display_address"].each do |x| %>
-      <div><%= x %></div>
-         <% end %>
-      <p><%= @display[i]["display_phone"] %></p>
-      <p><%= @display[i]["snippet_text"] %></p>
-      <p><% i +=1 %></p>
-      <p><% end %></p>
 
-<div id="map-canvas" style="height:500px; width:500px;"></div>
+<div class="module stacked">
+  <div id="top">
+     <div class="module twocol">
+        <div><h1>I need a Drink.....</h1></div>
+        <div>
+          <a href="http://www.yelp.com" target="_blank" >
+            <img src="yelp_logo_100x50.png" alt="powered by Yelp"/>
+          </a>
+        </div>
+     </div>
+   </div>
 
+  <div id="bottom">
+
+    <div class="module twocol">
+       <div id="map-canvas" ></div>
+
+          <div id="scrolling" >
+             <p><% i = 0 %></p>
+             <p><% while i < @display.length %></p>
+             <p id="bname"><%= @display[i]["name"] %></p>
+               <% @display[i]["location"]["display_address"].each do |x| %>
+             <div id="address"><%= x %></div>
+              <% end %>
+             <p><%= @display[i]["display_phone"] %></p>
+             <p><%= @display[i]["snippet_text"] %></p>
+             <p><a href=<%= @display[i]["url"] %> target="_blank">
+              <%= @display[i]["url"] %> </a></p>
+             <p><% i +=1 %></p>
+             <p><% end %></p>
+       </div>
+    </div>
+  </div>
+</div>
+
+<% content_for :scripts do %>
 <script>
 
   var locations = <%= @results %>
@@ -55,4 +79,25 @@
   $(document).ready(function(){
     initialize();
   });
+
+
+
+  var currentTime = new Date().getHours();
+     if ( currentTime> 2 | currentTime<11) {
+       if(document.body) {
+          document.body.background = "coffee.png";
+        }
+      }
+     else if (currentTime>=11 &&currentTime < 3) {
+       if(document.body) {
+       document.body.background = "soda.png";
+      }
+     }
+    else {
+      if (document.body) {
+      document.body.background = "vodka.png";
+      }
+    }
+
 </script>
+<% end %>

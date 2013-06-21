@@ -19,17 +19,10 @@
   </head>
 
   <body>
-    <div class="module twocol">
-      <div><h1>I need a Drink.....</h1></div>
-      <div>
-        <a href="http://www.yelp.com" target="_blank" >
-          <img src="yelp_logo_100x50.png" alt="powered by Yelp"/>
-        </a>
-      </div>
-    </div>
 
     <%= yield %>
     <%= javascript_include_tag "application" %>
+    <%= content_for :scripts %>
 
   </body>
 </html>
