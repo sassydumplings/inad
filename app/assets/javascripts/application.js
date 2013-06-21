@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-
 //= require foundation
 //= require inad.js
 //= require_tree .
