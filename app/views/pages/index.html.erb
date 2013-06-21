@@ -20,14 +20,12 @@
           <div id="scrolling" >
              <p><% i = 0 %></p>
              <p><% while i < @display.length %></p>
-             <p id="bname"><%= @display[i]["name"] %></p>
+             <a href=<%= @display[i]["url"] %> target="_blank"><p id="name"><%= @display[i]["name"] %></p></a>
                <% @display[i]["location"]["display_address"].each do |x| %>
              <div id="address"><%= x %></div>
               <% end %>
-             <p><%= @display[i]["display_phone"] %></p>
-             <p><%= @display[i]["snippet_text"] %></p>
-             <p><a href=<%= @display[i]["url"] %> target="_blank">
-              <%= @display[i]["url"] %> </a></p>
+             <p id="phone"><%= @display[i]["display_phone"] %></p>
+             <p id="snippet"><%= @display[i]["snippet_text"] %></p>
              <p><% i +=1 %></p>
              <p><% end %></p>
        </div>
