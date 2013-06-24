@@ -31,9 +31,6 @@ class PagesController < ApplicationController
 
 
 
-    path = "/v2/search?term=bars&ll=37.779751,-122.394783&limit=5&sort=1"
-
-
     @results = []
     p["businesses"].each do |business|
       @results << Geocoder.coordinates(business["location"]["display_address"].join(", "))
