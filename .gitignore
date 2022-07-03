@@ -13,10 +13,5 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-<<<<<<< HEAD
 / .env
 /config/database.yml
-=======
-config/database.yml
-
->>>>>>> 85249ba9abd71f64747921a6fde95f42cfabb39d
